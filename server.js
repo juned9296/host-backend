@@ -13,7 +13,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-mongoose.connect(process.env.MONGO_URI, {
+mongoose.connect('mongodb+srv://junedahmad9296:vtAewfCkoFmYy4Dt@cluster0.uf4pcrx.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
@@ -23,7 +23,7 @@ mongoose.connect(process.env.MONGO_URI, {
 app.use('/api/events', eventRoutes);
 app.use('/api/notifications', notificationRoutes);
 
-const PORT = process.env.PORT || 5001;
+const PORT = 5001;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
